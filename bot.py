@@ -13,14 +13,19 @@ async def on_ready():
 
 @bot.event      #join
 async def on_member_join(member):
-    #print(f'{member} join!')
+    print(f'{member} join!')
     channel = bot.get_channel(844991915135860758)
     await channel.send(f'{member} join!')
 
 @bot.event      #leave
 async def on_member_remove(member):
-    #print(f'{member} leave!')
+    print(f'{member} leave!')
     channel = bot.get_channel(844991915135860758)
     await channel.send(f'{member} leave!')
 
-bot.run('ODQ0NjI3OTY2MDgzMzM0MjE0.YKVLFw.X2vwl1QbAbmVHZnHmlyxsmiVq6Q')
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send(bot.latency)
+
+bot.run('ODQ0NjI3OTY2MDgzMzM0MjE0.YKVLFw.n1RjSs0w_btrzHcAL5ylL5RpTf0')
