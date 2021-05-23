@@ -1,6 +1,8 @@
 from asyncio.tasks import wait
 import discord
 import json
+import random
+from discord import file
 from discord.ext import commands
 from discord.flags import SystemChannelFlags
 intents = discord.Intents.default()
@@ -37,5 +39,16 @@ async def ping(ctx):
 @bot.command()
 async def pig(ctx):
     await ctx.send('你才豬，你全家都是豬')
+
+@bot.command()
+async def p0(ctx):
+    pic = discord.File('C:\\Users\\jack8\\Documents\\GitHub\\discordBot\\pic\\123.jpg')
+    await ctx.send(file = pic)
+
+@bot.command()
+async def p(ctx):
+    random_pic = random.choice(jdata['pic'])
+    await ctx.send(random_pic)
+
 
 bot.run(jdata['TOKEN'])
